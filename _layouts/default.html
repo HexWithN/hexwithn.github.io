@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html itemscope itemtype="https://schema.org/WebPage" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width" name="viewport">
+		<meta name="description" content="
+            The portfolio of Nazaire Shabazz - game developer & digital artist.
+            This website contains Nazaire's personal works as well as links to his social media, experience, contact info, and resume.
+            ">
+		<meta name="keywords" content="Game Developer, Portfolio, Digital Artist, Resume, Personal Website">
+		<meta name="author" content="Nazaire Shabazz">
+        
+        <script src="https://use.fonticons.com/29ee37cc.js"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet" href="{{ site.baseurl }}/Assets/stylesheet.css"/>
+        <link rel="shortcut icon" href="{{ site.baseurl }}/Assets/favicon.png">
+
+		<title>Nazaire Shabazz | Digital Media Developer</title>
+	</head>
+    <body>
+        <header>
+            <nav>
+                <a href="{{ site.baseurl }}/"><img alt="Hex With N" src="{{ site.baseurl }}/Assets/logo.png"/></a>
+
+                <a id="WorksButton" href="{{ site.baseurl }}/Works/"><span></span>Works</a>
+                <a id="BlogButton" href="{{ site.baseurl }}/Blog/"><span></span>Blog</a>
+                <a id="AboutButton" href="{{ site.baseurl }}/About/"><span></span>About</a>
+                <a id="sMMButton" onclick="toggleMenu()"><span></span>Menu</a>
+            </nav>
+
+            <div class="sMM socialMediaMenuBG" onclick="closeMenu()"></div>
+            <nav class="sMM socialMediaMenu">
+                <address>
+                    <p>Email: <a href="mailto:hexwithn@gmail.com" target="_blank">hexwithn@gmail.com</a></p>
+                    <p>Phone: <a href="tel:9172631908" target="_blank">+1 (917) 263-1908</a></p>
+                </address>
+                <p class="flex-container">
+                    <a href="https://twitter.com/HexWithN" class="icon icon-twitter icon-2x" onmouseover="setHoveredMediaText('Twitter');" onmouseout="setHoveredMediaText('...')"></a>
+                    <a href="https://www.linkedin.com/in/nqshabazz" class="icon icon-linkedin icon-2x" onmouseover="setHoveredMediaText('LinkedIn');" onmouseout="setHoveredMediaText('...')"></a>
+                    <a href="https://plus.google.com/u/0/105578321287510788565" class="icon icon-google-plus icon-2x" onmouseover="setHoveredMediaText('Google+');" onmouseout="setHoveredMediaText('...')"></a>
+                </p>
+                <p class="flex-container">
+                    <a href="https://github.com/HexWithN" class="icon icon-github icon-2x" onmouseover="setHoveredMediaText('Github');" onmouseout="setHoveredMediaText('...')"></a>
+                    <a href="https://hex-with-n.tumblr.com/" class="icon icon-tumblr icon-2x" onmouseover="setHoveredMediaText('Tumblr');" onmouseout="setHoveredMediaText('...')"></a>
+                    <a href="https://www.youtube.com/channel/UC9psr6hprhAx_09i4-nIKdA" class="icon icon-youtube-play icon-2x" onmouseover="setHoveredMediaText('YouTube');" onmouseout="setHoveredMediaText('...')"></a>
+                </p>
+                <!--<p id="hoveredSocialMedia">
+                    ...
+                </p>-->
+                <p class="supportMe">
+                    <a href="paypal.me/NQShabazz">Support me on <span>PayPal</span>!</a>
+                </p>
+            </nav>
+        </header>
+        
+        <main>
+            {{content}}
+        </main>
+
+        <footer>
+            <p><a href="{{ site.baseurl }}/">Hex With N</a></p>
+            <p>Copyright © 2016 Nazaire Shabazz</p>
+        </footer>
+
+        <script src="{{ site.baseurl }}/Assets/Script.js"></script>
+        <script>
+            checkRelevantMenuItem("{{page.title}}");
+        </script>
+    </body>
+</html>

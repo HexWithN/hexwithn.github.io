@@ -1,0 +1,100 @@
+﻿*{margin: 0; padding: 0; color:inherit;}
+
+html{background-color: #ddd;}
+body{display: flex; position: relative; min-height: 100vh; align-items: center; max-width: 1980px; background: url('Background/background.png'); font-family: 'Open Sans', sans-serif; color: #444; overflow-x: hidden;}
+img{max-width: 100%;}
+hr{margin: 10px 0;}
+h1{font-size: 25px;}
+
+header, main{}
+
+header{display: flex; position: fixed; width: 80%; padding: 15px 10%; color: #fff; background: #000;}
+	header nav{width: 100%;}
+	header nav:first-child{display: flex; justify-content: flex-start;}
+	header nav:first-child a:first-child{padding-right: 25px;}
+		header a:first-child img{width: 64px; vertical-align: middle;}
+	header nav:first-child a:not(:first-child){font-size: 25px; text-decoration: none; margin: 0; padding: 10px; transition: color 125ms linear;}
+		header nav:first-child a:not(.current-item) span::after{content: "|";}
+		header a:hover, header a.current-item{color: #00aeff;}
+		header a#sMMButton{cursor: pointer;}
+		header a#sMMButton.open{background-color: white; z-index: 2;}
+
+.socialMediaMenuBG, .socialMediaMenu{transition: right 250ms linear; right: 100%;}
+.socialMediaMenuBG.open, .socialMediaMenu.open{right: 0;}
+.socialMediaMenuBG{position: fixed; top: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.75); z-index: 1;}
+.socialMediaMenu{position: fixed; top: 150px; width: 100vw; padding: 25px 0; color: #fff; text-align: center; background-color: #000; z-index: 2;}
+		.socialMediaMenu address{font-style: normal;}
+			.socialMediaMenu address a{display: inline-block; font-size: 20px; padding: 10px 0;}
+		.socialMediaMenu a.icon{text-decoration: none;}
+			.socialMediaMenu a.icon:hover{background-color: #00aeff; color: #fff;}
+		.socialMediaMenu p{max-width: 500px; margin: auto;}
+			.socialMediaMenu p#hoveredSocialMedia{padding: 20px 0; }
+			.socialMediaMenu p.supportMe{font-size: 20px;}
+				.socialMediaMenu p.supportMe:hover{background-color: #00aeff; color: #fff;}
+				.socialMediaMenu p.supportMe a{display: block; height: 100%; padding: 25px 0; color: inherit; text-decoration: none;}
+				.socialMediaMenu p.supportMe span{font-weight: bold;}
+		.socialMediaMenu .flex-container a{padding: 25px 5%;}
+
+main{width: 100%; margin: auto; padding: 125px 0; text-align: center; font-size: 150%;}
+		main  #homepage, main #about{display: flex; align-items: center;}
+		main #homepage figure, main #about figure, main #homepage div, main #about div{width: 25%; display: inline-block; vertical-align: middle;}
+			main #homepage figure img, main #about figure img{width: 100%; max-width: 400px;}
+		main #homepage div, main #about div{width: 70%; text-align: left;}
+		main #homepage div > *, main #about div > *{padding: 2.5% 0 0 0; text-align: left;}
+		main #homepage p, main #about p{line-height: 175%;}
+		main #homepage div > a, main #about div > a{
+			display: inline-block; padding: 25px 2.5%; margin: 5% 0 0 0; color: #fff; text-decoration: none; cursor: pointer;
+			border-radius: 5px; border-bottom: 3px solid #11dfff; background-color: #009dee; transition: background-color 250ms linear;
+		}
+			main  #homepage a:hover, main #about a:hover{background-color: #00aeff;}
+
+		main .entry p{padding: 10px 0;}
+
+		main .posts{width: 80%; margin: auto; text-align: left;}
+			main .posts article{margin: 5px 0; padding: 25px; color: #fff; border-radius: 5px; background: rgba(0, 0, 0, 0.6);}
+			main .posts h4 a{text-decoration: none;}
+			main .posts h6{padding: 0 0 15px 0;}
+			main .posts div > a{color: #00aeff;}
+
+		main .post{width: 90%; max-width: 800px; margin: auto; text-align: left;}
+			main .post p{text-indent: 5%;}
+			main .post h1{padding: 25px 0;}
+			main .post h6{padding: 0 0 10px 0; color: #888;}
+		
+		main #works{text-align: left; width: 80%; margin: auto;}
+		main #works > a{text-decoration: none;}
+		main #works article{margin: 5px 0; padding: 25px; color: #fff; border-radius: 5px; background: rgba(0, 0, 0, 0.6); transition: background 125ms linear}
+		main #works article:hover{background: #00aeff;}
+			main #works article :first-child{font-weight: 900; }
+
+footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding-top: 1%; text-align: center; color: #ddd; background-color: #000;}
+	footer p{padding: 0 0 1% 0;}
+	footer a{text-decoration: underline;}
+	
+@media only screen and (max-width: 800px){
+	main #homepage, main #about{display: block;}
+	main #homepage figure, main #about figure, main #homepage div, main #about div{width: 90%; margin: auto;}
+	main #homepage div, main #about div{text-align: center;}
+
+	main .posts img{display: none;}
+	main .posts div{width: 100%;}
+}
+
+@media only screen and (max-height: 900px){
+	main #homepage p:last-of-type{display: none;}
+}
+
+@media only screen and (orientation: portrait){
+
+	header{width: 100%; padding: 10px 0 0 0;}
+	header nav:first-child{justify-content: space-around;}
+	header nav:first-child a:not(:first-child){font-size: 20px;}
+	header nav:first-child a:first-child{padding: 0;}
+	header nav:first-child a:not(:first-child){border-bottom: 5px solid #444;}
+		header nav:first-child a.current-item{border-bottom: 5px solid #00aeff;}
+		header nav:first-child a:not(.phantom-class) span::after{content: "";}
+		
+	main{font-size: 125%; padding: 80px 0 65px 0;}
+		main #homepage > *:not(a), main #about > *:not(a){padding: 0 0 5px 0;}
+			main #homepage div > a, main #about div > a{background-color: #00aeff;}
+}
