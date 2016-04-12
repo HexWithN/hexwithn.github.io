@@ -3,7 +3,7 @@ layout: post
 title: Basic Concepts
 type: article
 specificSubject: Graphical Mathematics
-image: Assets/Game Thumbnails/HexNum0.gif
+image: Assets/Graph Math/pic0.png
 category: blogpost
 tags: Graphical Mathematics, Math Tutorial, Math, Points and Lines, Local Coordinates, Global Coordinates
 desc: This tutorial will introduce some of the basic concepts of graphical math. That is, points & arrays, and local vs. global coordinates.
