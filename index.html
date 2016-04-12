@@ -1,24 +1,43 @@
 ---
 layout: default
+title: Game Developer
+type: website
+tags: Game Developer, Portfolio
+desc: The personal portfolio of Nazaire Shabazz. He's a game developer and graphic artist
 ---
 
-<section id="homepage">
-    <figure>
-        <img src="{{ site.baseurl }}/Assets/logo.png" />
-    </figure>
-    <div>
-        <h4>Welcome !</h4>
-        <p>
-            My name is Nazaire Shabazz, and I develop digital media.
-        </p>
-        <p>
-            My skills include code, design, and animation, and my passion is game development.
-        </p>
-        <a href="Works/">
-            Newest Work
-        </a>
-        <a onclick="openMenu()">
-            Get in Touch
-        </a>
-    </div>
+<section id="Homepage">
+    
+    <section class="content card">
+
+        <h1>Welcome to my website!</h1>
+
+        <hr />
+        
+        {% for post in site.categories.project limit:1 %}
+        <figure class="card">
+
+            <p>Latest Project:</p>
+            <img alt="{{post.title}}" src="{{post.image}}" />
+            <figcaption><a class="theLink" href="{{ post.url }}">{{ post.title }}</a></figcaption>
+
+        </figure>
+        {% endfor %}
+
+        <a href="/Projects/">View All Projects</a>
+        
+        {% for post in site.categories.blogpost limit:1 %}
+        <figure class="card">
+
+            <p>Latest Blog Post:</p>
+            <img alt="{{post.title}}" src="/{{post.image}}" />
+            <figcaption><a class="theLink" href="{{ post.url }}">{{ post.specificSubject }} | {{ post.title }}</a></figcaption>
+
+        </figure>
+        {% endfor %}
+
+        <a href="/Blog/">View All Blog Posts</a>
+
+    </section>
+
 </section>

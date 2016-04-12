@@ -1,32 +1,32 @@
 ---
 layout: default
-title: Blog
-permalink: /Blog/
+title: Projects
+permalink: /Projects/
 type: website
-tags: Blog, Dev Blog, Game Developer
-desc: The blog of Nazaire Shabazz, an indie game developer. Take a peek!
+tags: Games, Indie Games, Game Development, Portfolio
+desc: These projects are made with luv by Nazaire
 ---
 
-<section class="checkMe posts" id="Blog">
+<section class="checkMe" id="Projects">
     
     <section class="content card">
 
-        <h1>Blog</h1>
+        <h1>Projects</h1>
 
         <hr />
+        
 
-        {% for post in site.categories.blogpost %}
+        {% for post in site.categories.project %}
 
             {% if forloop.index0 == 0 %}
 
             <figure class="card featured-item">
 
-                <p>Latest Post:</p>
+                <p>Latest Project:</p>
                 <img alt="{{post.title}}" src="/{{ post.image }}" />
                 <figcaption>
 
-                    <h2><a class="theLink" href="{{ post.url }}">{{ post.specificSubject }} | {{ post.title }}</a></h2>
-                    <h3><time datetime="{{page.date | date: '%Y-%m-%d'}}">{{ post.date | date: '%B %d, %Y' }}</time></h3>
+                    <h2><a class="theLink" href="{{ post.url }}">{{ post.title }}</a></h2>
 
                     <p class="entry">
 
@@ -47,7 +47,7 @@ desc: The blog of Nazaire Shabazz, an indie game developer. Take a peek!
 
                     <img alt="{{post.title}}" src="/{{post.image}}" />
                     <figcaption>
-                        <h2><a class="theLink" href="{{post.url}}">{{ post.specificSubject }} | {{post.title}}</a></h2>
+                        <a class="theLink" href="{{post.url}}">{{post.title}}</a>
                     </figcaption>
 
                 </figure>

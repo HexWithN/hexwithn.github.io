@@ -2,17 +2,38 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
-    <h6 class="date">
-    {{ page.date | date: "%B %e, %Y" }}
-  </h6>
+<section class="checkMe">
 
-  <div class="entry">
-    {{ content }}
-  </div>
+    <article class="content post">
 
-  
+        <h1>{{ page.specificSubject }}</h1>
+        <h2>{{ page.title }}</h2>
 
-  {% include disqus.html %}
-</article>
+        <hr />
+
+        <h3><time datetime="{{page.date | date: '%Y-%m-%d'}}">{{ page.date | date: "%B %e, %Y" }}</time></h3>
+
+        <div class="entry">
+
+            {{ content }}
+            <br />
+            <p>See you next post!</p>
+            <p>~Nazaire S.</p>
+            <hr />
+            <p>
+                If you have questions, suggestions, or comments on this post, send a quick email with the header <b>{{page.specificSubject}}</b> and I will get back to you.
+                Also, if you find this post helpful, be sure to share it!
+            </p>
+
+        </div>
+        
+        <p>
+            Email: {{site.email}}
+        </p>
+        <p>
+            Link: <code>http://nqshabazz.me/{{page.url}}</code>
+        </p>
+
+    </article>
+
+</section>

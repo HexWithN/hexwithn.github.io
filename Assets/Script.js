@@ -1,5 +1,8 @@
 var menuOpen = false;
 
+document.body.classList.remove("no-js");
+
+checkRelevantMenuItem();
 
 function openMenu() {
     document.getElementById("sMMButton").classList.add("open", "current-item");
@@ -8,6 +11,7 @@ function openMenu() {
     document.getElementsByClassName("sMM")[1].classList.add("open");
     menuOpen = true;
 }
+
 function closeMenu() {
     document.getElementById("sMMButton").classList.remove("open", "current-item");
     document.getElementById("sMMButton").innerHTML = "<span></span>Menu";
@@ -15,6 +19,7 @@ function closeMenu() {
     document.getElementsByClassName("sMM")[1].classList.remove("open");
     menuOpen = false;
 }
+
 function toggleMenu() {
     if (menuOpen)
         closeMenu();
@@ -22,12 +27,12 @@ function toggleMenu() {
         openMenu();
 }
 
-function setHoveredMediaText(text){
-    //document.getElementById("hoveredSocialMedia").innerText = text;
-}
+function checkRelevantMenuItem() {
+    lelist = document.getElementsByClassName("checkMe");
 
-function checkRelevantMenuItem(pagename) {
-    buttonID = pagename + "Button";
-    if (document.getElementById(buttonID))
-        document.getElementById(buttonID).classList.add("current-item");
+    if (lelist.length > 0) {
+        buttonID = lelist[0].id + "Button";
+        if (document.getElementById(buttonID))
+            document.getElementById(buttonID).classList.add("current-item");
+    }
 }

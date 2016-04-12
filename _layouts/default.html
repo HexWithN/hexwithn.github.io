@@ -1,71 +1,142 @@
 ﻿<!DOCTYPE html>
+
 <html itemscope itemtype="https://schema.org/WebPage" lang="en">
+
 	<head>
+
 		<meta charset="UTF-8">
 		<meta content="width=device-width" name="viewport">
-		<meta name="description" content="
-            The portfolio of Nazaire Shabazz - game developer & digital artist.
-            This website contains Nazaire's personal works as well as links to his social media, experience, contact info, and resume.
-            ">
-		<meta name="keywords" content="Game Developer, Portfolio, Digital Artist, Resume, Personal Website">
+		<meta name="description" content="{{page.desc}}">
+		<meta name="keywords" content="{{page.tags}}">
 		<meta name="author" content="Nazaire Shabazz">
+
+        <meta property="og:title" content="Nazaire Shabazz | {{page.title}}" />
+        <meta property="og:description" content="{{page.desc}}" />
+        <meta property="og:type" content="{{page.type}}" />
+        <meta property="og:url" content="http://nqshabazz.me/{{page.url}}" />
+        {% if page.image %}
+        <meta property="og:image" content="http://nqshabazz.me/{{page.image}}" />
+        {% else %}
+        <meta property="og:image" content="http://nqshabazz.me/Assets/logo.png" />
+        {% endif %}
+        <meta property="og:locale:alternate" content="es_ES" />
+        <meta property="og:locale:alternate" content="it_IT" />
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@nazaire_shabazz">
+        <meta name="twitter:creator" content="@nazaire_shabazz">
+        <meta name="twitter:title" content="Nazaire Shabazz | {{page.title}}">
+        <meta name="twitter:description" content="{{page.desc}}"/>
+        {% if page.image %}
+        <meta name="twitter:image" content="http://nqshabazz.me/{{page.image}}">
+        {% else %}
+        <meta name="twitter:image" content="http://nqshabazz.me/Assets/logo.png">
+        {% endif %}
+
+        <link rel="publisher" href="https://plus.google.com/u/0/108087186026257855732"/>
+
+        <link rel="canonical" href="/" />
         
         <script src="https://use.fonticons.com/29ee37cc.js"></script>
+        
+        {% if page.tags contains "Math" %}
+            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        {% endif %} 
 
+        <link rel="shortcut icon" href="/Assets/favicon.png">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-		<link type="text/css" rel="stylesheet" href="{{ site.baseurl }}/Assets/stylesheet.css"/>
-        <link rel="shortcut icon" href="{{ site.baseurl }}/Assets/favicon.png">
+		<link type="text/css" rel="stylesheet" href="/Assets/stylesheet.css"/>
 
-		<title>Nazaire Shabazz | Digital Media Developer</title>
+		<title>Nazaire Shabazz | {{page.title}}</title>
+
 	</head>
-    <body>
-        <header>
-            <nav>
-                <a href="{{ site.baseurl }}/"><img alt="Hex With N" src="{{ site.baseurl }}/Assets/logo.png"/></a>
 
-                <a id="WorksButton" href="{{ site.baseurl }}/Works/"><span></span>Works</a>
-                <a id="BlogButton" href="{{ site.baseurl }}/Blog/"><span></span>Blog</a>
-                <a id="AboutButton" href="{{ site.baseurl }}/About/"><span></span>About</a>
+    <body class="no-js">
+
+        <header>
+
+            <nav>
+
+                <a class="logoButton" href="/"><img alt="logo" src="/Assets/logo.png"/> <span class="landscape-only">Nazaire Shabazz</span></a>
+
+                <a class="landscape-only" id="ProjectsButton" href="/Projects/"><span></span>Projects</a>
+                <a class="landscape-only" id="BlogButton" href="/Blog/"><span></span>Blog</a>
+                <a class="landscape-only" id="AboutButton" href="/About/"><span></span>About</a>
                 <a id="sMMButton" onclick="toggleMenu()"><span></span>Menu</a>
+
             </nav>
+
+            <noscript>
+
+                <nav class="portrait-only">
+
+                    <a href="/Projects/"><span></span>Projects</a>
+                    <a href="/Blog/"><span></span>Blog</a>
+                    <a href="/About/"><span></span>About</a>
+
+                </nav>
+
+                <address>
+
+                    <p>
+
+                        nqshabazz [at] gmail.com | +1 (917) 263-1908
+
+                    </p>
+
+                </address>
+
+            </noscript>
 
             <div class="sMM socialMediaMenuBG" onclick="closeMenu()"></div>
+
             <nav class="sMM socialMediaMenu">
+
+                <a class="portrait-only" href="/"><span></span>Home</a>&emsp;
+                <a class="portrait-only" href="/Projects/"><span></span>Projects</a>&emsp;
+                <a class="portrait-only" href="/Blog/"><span></span>Blog</a>&emsp;
+                <a class="portrait-only" href="/About/"><span></span>About</a>
+
+                <p class="flex-container">
+
+                    <a target="_blank" href="https://twitter.com/nazaire_shabazz" class="icon icon-twitter icon-2x"></a>
+                    <a target="_blank" href="https://github.com/HexWithN" class="icon icon-github icon-2x"></a>
+                    <a target="_blank" href="https://nazaire-s.tumblr.com/" class="icon icon-tumblr icon-2x"></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UC3-P8zUZbtJxyTQTvDAb9Dg" class="icon icon-youtube-play icon-2x"></a>
+                
+                </p>
+
                 <address>
-                    <p>Email: <a href="mailto:hexwithn@gmail.com" target="_blank">hexwithn@gmail.com</a></p>
-                    <p>Phone: <a href="tel:9172631908" target="_blank">+1 (917) 263-1908</a></p>
+
+                    <p>Email: <a>{{site.email}}</a></p>
+                    <p>Phone: <a>{{site.phone}}</a></p>
+
                 </address>
-                <p class="flex-container">
-                    <a href="https://twitter.com/HexWithN" class="icon icon-twitter icon-2x" onmouseover="setHoveredMediaText('Twitter');" onmouseout="setHoveredMediaText('...')"></a>
-                    <a href="https://www.linkedin.com/in/nqshabazz" class="icon icon-linkedin icon-2x" onmouseover="setHoveredMediaText('LinkedIn');" onmouseout="setHoveredMediaText('...')"></a>
-                    <a href="https://plus.google.com/u/0/105578321287510788565" class="icon icon-google-plus icon-2x" onmouseover="setHoveredMediaText('Google+');" onmouseout="setHoveredMediaText('...')"></a>
-                </p>
-                <p class="flex-container">
-                    <a href="https://github.com/HexWithN" class="icon icon-github icon-2x" onmouseover="setHoveredMediaText('Github');" onmouseout="setHoveredMediaText('...')"></a>
-                    <a href="https://hex-with-n.tumblr.com/" class="icon icon-tumblr icon-2x" onmouseover="setHoveredMediaText('Tumblr');" onmouseout="setHoveredMediaText('...')"></a>
-                    <a href="https://www.youtube.com/channel/UC9psr6hprhAx_09i4-nIKdA" class="icon icon-youtube-play icon-2x" onmouseover="setHoveredMediaText('YouTube');" onmouseout="setHoveredMediaText('...')"></a>
-                </p>
-                <!--<p id="hoveredSocialMedia">
-                    ...
-                </p>-->
+
                 <p class="supportMe">
-                    <a href="paypal.me/NQShabazz">Support me on <span>PayPal</span>!</a>
+
+                    <a href="https://paypal.me/NQShabazz">Support me on Paypal !</a>
+
                 </p>
+
             </nav>
+            
         </header>
         
         <main>
+
             {{content}}
+
         </main>
 
         <footer>
-            <p><a href="{{ site.baseurl }}/">Hex With N</a></p>
+
             <p>Copyright © 2016 Nazaire Shabazz</p>
+
         </footer>
 
-        <script src="{{ site.baseurl }}/Assets/Script.js"></script>
-        <script>
-            checkRelevantMenuItem("{{page.title}}");
-        </script>
+        <script src="/Assets/Script.js"></script>
+
     </body>
+
 </html>

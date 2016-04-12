@@ -1,100 +1,145 @@
 ﻿*{margin: 0; padding: 0; color:inherit;}
 
-html{background-color: #ddd;}
-body{display: flex; position: relative; min-height: 100vh; align-items: center; max-width: 1980px; background: url('Background/background.png'); font-family: 'Open Sans', sans-serif; color: #444; overflow-x: hidden;}
+html{
+	font-family: "Open Sans", "Trebuchet MS", Helvetica, sans-serif; color: #444; background-color: #eee;
+}
+body{position: relative; min-height: 100vh; background: url('Background/background.png'); overflow-x: hidden;}
+
+p{text-indent: 15px;}
 img{max-width: 100%;}
 hr{margin: 10px 0;}
-h1{font-size: 25px;}
+h1{font-size: 150%;}
+h2{font-size: 110%;}
+h3{font-size: 100%;}
+h4{font-size: 90%;}
+a{text-decoration: none;}
+.card{box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);}
 
-header, main{}
+time{font-size: 75%;}
 
-header{display: flex; position: fixed; top: 0; left: 0; width: 80%; padding: 15px 10%; color: #fff; background: #000;}
-	header nav{width: 100%;}
-	header nav:first-child{display: flex; justify-content: flex-start;}
-	header nav:first-child a:first-child{padding-right: 25px;}
-		header a:first-child img{width: 64px; vertical-align: middle;}
-	header nav:first-child a:not(:first-child){font-size: 25px; text-decoration: none; margin: 0; padding: 10px; transition: color 125ms linear;}
-		header nav:first-child a:not(.current-item) span::after{content: "|";}
+header{display: inline-flex; flex-flow: row wrap; position: fixed; z-index: 1; top: 0; left: 0; width: 80%; padding: 0 10%; border-bottom: 1px solid #ddd; background-color: #fff;}
+body.no-js header > nav{display: none;}
+	header nav{width: 100%; flex: 0 0 100%;}
+	header > div, header > noscript{display: block; width: 100%; text-align: right;}
+	header a{cursor: pointer; vertical-align: text-bottom;}
+		header a.logoButton{margin-right: auto; font-size: 1.5em;}
+			header a.logoButton img{width: 64px; vertical-align: middle;}
+		header a#sMMButton.open, header a#LogoButton.open{z-index: 2;}
 		header a:hover, header a.current-item{color: #00aeff;}
-		header a#sMMButton{cursor: pointer;}
-		header a#sMMButton.open{background-color: white; z-index: 2;}
+	header nav:first-child{display: flex; justify-content: flex-start;}
+		header nav:first-child a{transition: color 125ms linear;}
+			header nav:first-child a:not(.logoButton){margin: 0; padding: 15px 10px 0 10px; font-size: 20px;}
+				header nav:first-child a:not(.current-item):not(:first-child) span::after{content: "|";}
 
-.socialMediaMenuBG, .socialMediaMenu{transition: right 250ms linear; right: 100%;}
+.socialMediaMenuBG, .socialMediaMenu{transition: right 250ms linear; right: -400px; width: 400px;}
 .socialMediaMenuBG.open, .socialMediaMenu.open{right: 0;}
-.socialMediaMenuBG{position: fixed; top: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.75); z-index: 1;}
-.socialMediaMenu{position: fixed; top: 150px; width: 100vw; padding: 25px 0; color: #fff; text-align: center; background-color: #000; z-index: 2;}
-		.socialMediaMenu address{font-style: normal;}
-			.socialMediaMenu address a{display: inline-block; font-size: 20px; padding: 10px 0;}
-		.socialMediaMenu a.icon{text-decoration: none;}
-			.socialMediaMenu a.icon:hover{background-color: #00aeff; color: #fff;}
-		.socialMediaMenu p{max-width: 500px; margin: auto;}
-			.socialMediaMenu p#hoveredSocialMedia{padding: 20px 0; }
-			.socialMediaMenu p.supportMe{font-size: 20px;}
-				.socialMediaMenu p.supportMe:hover{background-color: #00aeff; color: #fff;}
-				.socialMediaMenu p.supportMe a{display: block; height: 100%; padding: 25px 0; color: inherit; text-decoration: none;}
-				.socialMediaMenu p.supportMe span{font-weight: bold;}
-		.socialMediaMenu .flex-container a{padding: 25px 5%;}
+.socialMediaMenuBG{position: fixed; top: 64px; height: calc(100vh - 64px); background-color: #023; z-index: 1;}
+.socialMediaMenu{position: fixed; top: 150px; padding-top: 50px; text-align: center; color: #fff; z-index: 2;}
+	.socialMediaMenu > a{ padding: 0;}
+	.socialMediaMenu a:not(.icon){font-size: 20px;}
+	.socialMediaMenu a:hover{color: 00aeff;}
+	.socialMediaMenu a.icon{margin-top: 25px;}
+	.socialMediaMenu p{max-width: 500px; margin: auto;}
+		.socialMediaMenu p#hoveredSocialMedia{padding: 20px 0; }
+		.socialMediaMenu p.supportMe{font-size: 20px;}
+			.socialMediaMenu p.supportMe a{display: block; height: 100%; padding: 25px 0;}
+	.socialMediaMenu .flex-container a{padding: 25px 5%; text-indent: 0;}
 
-main{width: 100%; margin: auto; padding: 125px 0; text-align: center; font-size: 150%;}
-		main  #homepage, main #about{display: flex; align-items: center;}
-		main #homepage figure, main #about figure, main #homepage div, main #about div{width: 25%; display: inline-block; vertical-align: middle;}
-			main #homepage figure img, main #about figure img{width: 100%; max-width: 400px;}
-		main #homepage div, main #about div{width: 70%; text-align: left;}
-		main #homepage div > *, main #about div > *{padding: 2.5% 0 0 0; text-align: left;}
-		main #homepage p, main #about p{line-height: 175%;}
-		main #homepage div > a, main #about div > a{
-			display: inline-block; padding: 25px 2.5%; margin: 5% 0 0 0; color: #fff; text-decoration: none; cursor: pointer;
-			border-radius: 5px; border-bottom: 3px solid #11dfff; background-color: #009dee; transition: background-color 250ms linear;
-		}
-			main  #homepage a:hover, main #about a:hover{background-color: #00aeff;}
+main{padding: 100px 0 75px 0; margin: auto;}
 
-		main .entry p{padding: 10px 0;}
+main > section{display: block; width: 60%; min-width: 800px; margin: auto; border-radius: 5px; background: #fff;}
 
-		main .posts{width: 80%; margin: auto; text-align: left;}
-			main .posts article{margin: 5px 0; padding: 25px; color: #fff; border-radius: 5px; background: rgba(0, 0, 0, 0.6);}
-			main .posts h4 a{text-decoration: none;}
-			main .posts h6{padding: 0 0 15px 0;}
-			main .posts div > a{color: #00aeff;}
-
-		main .post{width: 90%; max-width: 800px; margin: auto; text-align: left;}
-			main .post p{text-indent: 5%;}
-			main .post h1{padding: 25px 0;}
-			main .post h6{padding: 0 0 10px 0; color: #888;}
-		
-		main #works{text-align: left; width: 80%; margin: auto;}
-		main #works > a{text-decoration: none;}
-		main #works article{margin: 5px 0; padding: 25px; color: #fff; border-radius: 5px; background: rgba(0, 0, 0, 0.6); transition: background 125ms linear}
-		main #works article:hover{background: #00aeff;}
-			main #works article :first-child{font-weight: 900; }
-
-footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding-top: 1%; text-align: center; color: #ddd; background-color: #000;}
-	footer p{padding: 0 0 1% 0;}
+footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding: 1% 0; text-align: center; border-top: 1px solid #ddd; background-color: #fff;}
 	footer a{text-decoration: underline;}
-	
-@media only screen and (max-width: 800px){
-	main #homepage, main #about{display: block;}
-	main #homepage figure, main #about figure, main #homepage div, main #about div{width: 90%; margin: auto;}
-	main #homepage div, main #about div{text-align: center;}
 
-	main .posts img{display: none;}
-	main .posts div{width: 100%;}
+.portrait-only{display: none;}
+
+/* SPECIFIC PAGE STYLING */
+
+.content{padding: 25px;}
+
+figure{position: relative; text-align: center;}
+	figure p{padding: 10px 0 10px 0; text-align: left;}
+	figure figcaption{font-size: 125%; margin: -5px 0 0 0; padding: 25px; text-align: left;}
+		figure figcaption a.theLink{color: #00aeff; border-bottom: 1px solid #00aeff;}
+	figure h2{font-weight: normal;}
+		
+#Homepage figure{position: relative; margin: 40px 0 10px 0; background-color: #222;}
+	#Homepage figure img{width: 600px;}
+	#Homepage figure p{background: #fff;}
+	#Homepage figure figcaption{position: absolute; display: block; left: 0; bottom: 25px; padding: 25px; width: 75%; background-color: #fff;}
+#Homepage .content > a{color: #00aeff;}
+
+figure.featured-item{background: #222;}
+	figure.featured-item img{display: block; max-height:400px; width: auto; height: auto; padding-bottom: 10px; margin: auto;}
+	figure.featured-item p, figure.featured-item figcaption{background: #fff;}
+	
+#Projects figure.featured-item{margin-bottom: 25px;}
+#Projects figure:not(.featured-item){position: relative; margin: 5px; width: 25%; min-width: 150px;}
+	#Projects figure:not(.featured-item) figcaption{position: absolute; display: block; left: 0; bottom: 20px; padding: 10px; max-width: 75%; background-color: #fff;}
+
+#About .flexMe{display: flex; flex-flow: row wrap; align-items: middle; justify-content: space-between;}
+#About div a{color: #00aeff;}
+#About div figure{padding: 0; max-width: 400px;}
+#About div figure, #About section.textStuff{flex: 1;}
+#About section.textStuff > div{padding: 20px;}
+#About progress{width: 100%;}
+#About section.textStuff > div ol{padding: 10px 0 0 25px;}
+
+#Blog article{padding: 40px 10px 10px 10px;}
+#Blog h2:hover, #Blog a{color: #00aeff;}
+#Blog figure:not(.featured-item){position: relative; margin: 5px 0; width: 45%; min-width: 300px;}
+	#Blog figure:not(.featured-item) figcaption{position: absolute; display: block; left: 0; bottom: 20px; padding: 10px; max-width: 75%; text-align: left; background-color: #fff;}
+
+.post .entry{padding: 25px 0 25px 0; font-size: 115%;}
+.post .entry h4{padding: 25px 0 10px 0;}
+.post .entry figure{padding: 25px 0 10px 0;}
+.post .entry img{width: 50%; min-width: 300px;}
+.post .entry img.full-width{max-width: 100%;}
+.post .entry hr{margin: 25px 0;}
+
+.mathEx{margin-top: 25px; background-color: #ddd;}
+.mathEx img{width: 60%; border: 1px solid #000;}
+.mathEx p{background: #444;}
+.mathEx p:hover{background: #fff;}
+
+#error404 figure{text-align: center; padding-bottom: 0;}
+#error404 figure p{text-align: left;}
+#error404 figure img{padding-top: 20px;}
+#error404 a{text-decoration: underline;}
+
+/* OTHER STUFF */
+
+@media only screen and (max-width: 800px){
 }
 
 @media only screen and (max-height: 900px){
-	main #homepage p:last-of-type{display: none;}
 }
 
 @media only screen and (orientation: portrait){
+	html{background-color: #fff;}
 
-	header{width: 100%; padding: 10px 0 0 0;}
+	.landscape-only{display: none;}
+	.portrait-only{display: initial;}
+	.portrait-card{box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);}
+
+	header{background-color: #00aeff; color: #fff}
 	header nav:first-child{justify-content: space-around;}
-	header nav:first-child a:not(:first-child){font-size: 20px;}
-	header nav:first-child a:first-child{padding: 0;}
 	header nav:first-child a:not(:first-child){border-bottom: 5px solid #444;}
-		header nav:first-child a.current-item{border-bottom: 5px solid #00aeff;}
-		header nav:first-child a:not(.phantom-class) span::after{content: "";}
+		header nav:first-child a:not(:first-child):hover{color: #fff;}
+	header nav:first-child a.current-item{border-bottom: 5px solid #fff;}
 		
-	main{font-size: 125%; padding: 80px 0 65px 0;}
-		main #homepage > *:not(a), main #about > *:not(a){padding: 0 0 5px 0;}
-			main #homepage div > a, main #about div > a{background-color: #00aeff;}
+	footer{background: #eee;}
+
+	.socialMediaMenuBG, .socialMediaMenu{right: -100%; width: 100%;}
+	
+	main{padding: 75px 0 25px 0; margin: 0;}
+	main > section{width: 100%; min-width: 100%;}
+	.content{padding: 40px 20px;}
+
+	#Homepage figure figcaption{padding: 10px;}
+
+	#About section.textStuff{min-width: 100%;}
+	#About div figure{min-width: auto; width: 100%; max-width: 400px; margin: auto;}
+	#About .portrait-card:not(.selfy){margin-top: 30px;}
 }
