@@ -20,7 +20,7 @@ Let's Begin!
 Your computer screen is a graph. If you are viewing this on a screen, you are actually looking at an array of pixels. An image on said screen can be represented by an array \\( n \times m \\) of pixels, where \\( n \\) is the width in pixels and \\( m \\) is the height in pixels. A point in this array \\( n \times m \\) is written in the format \\( (x, y) \\).
 
 <figure class="mathEx">
-	<img alt="logo" src="/Assets/Graph Math/Pic0.png"/>
+	<img alt="Math graph" src="/Assets/Graph Math/Pic0.png"/>
 	<figcaption>
 		Describe this array in the format n x m
 		<p> 5 x 3 | 5 columns by 3 rows </p>
@@ -38,7 +38,7 @@ Since we are using \\( n \times m \\) to represent an image on the screen, let \
 In graphical terms, any point described relative to the image \\( n \times m \\) would be *local coordinates* while any point described relative to the screen \\( N \times M \\) would be *global coordinates*.
 
 <figure class="mathEx">
-	<img alt="logo" src="/Assets/Graph Math/Pic1.png"/>
+	<img alt="Math graph" src="/Assets/Graph Math/Pic1.png"/>
 	<figcaption>
 		What are the global coordinates of the red dot?
 		<p> (4, 3) </p>
