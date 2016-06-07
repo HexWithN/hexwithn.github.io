@@ -2,42 +2,32 @@
 layout: default
 title: Game Developer
 type: website
+headertype: Home
 tags: Game Developer, Portfolio
 desc: The personal portfolio of Nazaire Shabazz. He's a game developer and graphic artist
 ---
 
-<section id="Homepage">
-    
-    <section class="content card">
+<section class="content" id="homepage">
+    <h1>Welcome !</h1>
+    <p>
+        I'm Nazaire Shabazz. Currently, I'm working on a <a href="/">snake-like fast-action adventure game</a>. In my spare time, I'm also working on a <a href="/">Java chat client</a>.
+        Basically, this is my portfolio and blog, where I post <a href="/Projects/">cool things I've made</a>, as well as whatever <a href="/Blog/">interesting thoughts I've had</a>.
+    </p>
 
-        <h1>Welcome to my website!</h1>
-
-        <hr />
-        
-        {% for post in site.categories.project limit:1 %}
-        <figure class="card">
-
-            <p>Latest Project:</p>
-            <img alt="{{post.title}}" src="{{post.image}}" />
-            <figcaption><a class="theLink" href="{{ post.url }}">{{ post.title }}</a></figcaption>
-
-        </figure>
-        {% endfor %}
-
-        <a href="/Projects/">View All Projects</a>
-        
-        {% for post in site.categories.blogpost limit:1 %}
-        <figure class="card">
-
-            <p>Latest Blog Post:</p>
-            <img alt="{{post.title}}" src="/{{post.image}}" />
-            <figcaption><a class="theLink" href="{{ post.url }}">{{ post.specificSubject }} | {{ post.title }}</a></figcaption>
-
-        </figure>
-        {% endfor %}
-
-        <a href="/Blog/">View All Blog Posts</a>
-
+    <section>
+    {% for post in site.categories.project %}
+        {% if post.status contains "current" %}
+        <a class="linkbox" href="{{post.url}}">
+            <article>
+            {% if post.image %}
+                <img alt="{{post.title}}" src="/{{post.image}}"/>
+            {% endif %}
+                <figcaption>
+                    <h2>{{post.title}}</h2>
+                </figcaption>
+            </article>
+        </a>
+        {% endif %}
+    {% endfor %}
     </section>
-
 </section>

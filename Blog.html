@@ -3,61 +3,23 @@ layout: default
 title: Blog
 permalink: /Blog/
 type: website
+headertype: Blog
 tags: Blog, Dev Blog, Game Developer
 desc: The blog of Nazaire Shabazz, an indie game developer. Take a peek!
 ---
 
-<section class="checkMe posts" id="Blog">
-    
-    <section class="content card">
-
-        <h1>Blog</h1>
-
-        <hr />
-
-        {% for post in site.categories.blogpost %}
-
-            {% if forloop.index0 == 0 %}
-
-            <figure class="card featured-item">
-
-                <p>Latest Post:</p>
-                <img alt="{{post.title}}" src="/{{ post.image }}" />
-                <figcaption>
-
-                    <h2><a class="theLink" href="{{ post.url }}">{{ post.specificSubject }} | {{ post.title }}</a></h2>
-                    <h3><time datetime="{{page.date | date: '%Y-%m-%d'}}">{{ post.date | date: '%B %d, %Y' }}</time></h3>
-
-                    <p class="entry">
-
-                        {{ post.desc }}
-
-                    </p>
-
-                </figcaption>
-
-            </figure>
-
-            {% else %}
-
+<section class="content" id="blog">
+    <h1>Blog</h1>
+    <section>
+    {% for post in site.categories.blogpost %}
+        <a class="linkbox" href="{{post.url}}">
             <article>
-
-
-                <figure class="portrait-card">
-
-                    <img alt="{{post.title}}" src="/{{post.image}}" />
-                    <figcaption>
-                        <h2><a class="theLink" href="{{post.url}}">{{ post.specificSubject }} | {{post.title}}</a></h2>
-                    </figcaption>
-
-                </figure>
-
+                {% if post.image %}<img alt="{{post.title}}" src="/{{post.image}}"/>{% endif %}
+                <figcaption>
+                    <h2>{{post.title}}</h2>
+                </figcaption>
             </article>
-
-            {% endif %}
-
-        {% endfor %}
-
+        </a>
+    {% endfor %}
     </section>
-
 </section>

@@ -3,7 +3,6 @@
 <html itemscope itemtype="https://schema.org/WebPage" lang="en">
 
 	<head>
-
 		<meta charset="UTF-8">
 		<meta content="width=device-width" name="viewport">
 		<meta name="description" content="{{page.desc}}">
@@ -14,11 +13,13 @@
         <meta property="og:description" content="{{page.desc}}" />
         <meta property="og:type" content="{{page.type}}" />
         <meta property="og:url" content="http://nqshabazz.me/{{page.url}}" />
+
         {% if page.image %}
         <meta property="og:image" content="http://nqshabazz.me/{{page.image}}" />
         {% else %}
-        <meta property="og:image" content="http://nqshabazz.me/Assets/logo.png" />
+        <meta property="og:image" content="http://nqshabazz.me/Assets/Standard Assets/logo.png" />
         {% endif %}
+
         <meta property="og:locale:alternate" content="es_ES" />
         <meta property="og:locale:alternate" content="it_IT" />
 
@@ -27,10 +28,11 @@
         <meta name="twitter:creator" content="@nazaire_shabazz">
         <meta name="twitter:title" content="Nazaire Shabazz | {{page.title}}">
         <meta name="twitter:description" content="{{page.desc}}"/>
+
         {% if page.image %}
         <meta name="twitter:image" content="http://nqshabazz.me/{{page.image}}">
         {% else %}
-        <meta name="twitter:image" content="http://nqshabazz.me/Assets/logo.png">
+        <meta name="twitter:image" content="http://nqshabazz.me/Assets/Standard Assets/logo.png">
         {% endif %}
 
         <link rel="publisher" href="https://plus.google.com/u/0/108087186026257855732"/>
@@ -47,96 +49,58 @@
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link type="text/css" rel="stylesheet" href="/Assets/stylesheet.css"/>
 
-		<title>Nazaire Shabazz | {{page.title}}</title>
-
+		<title>nazaire shabazz - {{page.title}}</title>
 	</head>
 
     <body class="no-js">
-
         <header>
-
             <nav>
-
-                <a class="logoButton" href="/"><img alt="logo" src="/Assets/logo.png"/> <span class="landscape-only">Nazaire Shabazz</span></a>
-
-                <a class="landscape-only" id="ProjectsButton" href="/Projects/"><span></span>Projects</a>
-                <a class="landscape-only" id="BlogButton" href="/Blog/"><span></span>Blog</a>
-                <a class="landscape-only" id="AboutButton" href="/About/"><span></span>About</a>
-                <a id="sMMButton" onclick="toggleMenu()"><span></span>Menu</a>
-
-            </nav>
-
-            <noscript>
-
-                <nav class="portrait-only">
-
-                    <a href="/Projects/"><span></span>Projects</a>
-                    <a href="/Blog/"><span></span>Blog</a>
-                    <a href="/About/"><span></span>About</a>
-
-                </nav>
-
-                <address>
-
-                    <p>
-
-                        nqshabazz [at] gmail.com | +1 (917) 263-1908
-
-                    </p>
-
-                </address>
-
-            </noscript>
-
-            <div class="sMM socialMediaMenuBG" onclick="closeMenu()"></div>
-
-            <nav class="sMM socialMediaMenu">
-
-                <a class="portrait-only" href="/"><span></span>Home</a>&emsp;
-                <a class="portrait-only" href="/Projects/"><span></span>Projects</a>&emsp;
-                <a class="portrait-only" href="/Blog/"><span></span>Blog</a>&emsp;
-                <a class="portrait-only" href="/About/"><span></span>About</a>
-
-                <p class="flex-container">
-
-                    <a target="_blank" href="https://twitter.com/nazaire_shabazz" class="icon icon-twitter icon-2x"></a>
-                    <a target="_blank" href="https://github.com/HexWithN" class="icon icon-github icon-2x"></a>
-                    <a target="_blank" href="https://nazaire-s.tumblr.com/" class="icon icon-tumblr icon-2x"></a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UC3-P8zUZbtJxyTQTvDAb9Dg" class="icon icon-youtube-play icon-2x"></a>
-                
-                </p>
-
-                <address>
-
-                    <p>Email: <a>{{site.email}}</a></p>
-                    <p>Phone: <a>{{site.phone}}</a></p>
-
-                </address>
-
-                <p class="supportMe">
-
-                    <a href="https://paypal.me/NQShabazz">Support me on Paypal !</a>
-
-                </p>
-
+                <a class="home-button" href="/"><span class="emphasize">nazaire</span>shabazz</a>
+                <span class="float-right">
+                    {% if page.headertype contains "Home" %}
+                        <a id="current-page" href="/">Home</a>
+                    {% else %}
+                        <a href="/">Home</a>
+                    {% endif %}
+                    {% if page.headertype contains "Projects" %}
+                        <a id="current-page" href="/Projects/">Projects</a>
+                    {% else %}
+                        <a href="/Projects/">Projects</a>
+                    {% endif %}
+                    {% if page.headertype contains "Blog" %}
+                        <a id="current-page" href="/Blog/">Blog</a>
+                    {% else %}
+                        <a href="/Blog/">Blog</a>
+                    {% endif %}
+                    {% if page.headertype contains "More" %}
+                        <a id="current-page" href="/More/">More</a>
+                    {% else %}
+                        <a href="/More/">More</a>
+                    {% endif %}
+                </span>
             </nav>
             
+            <noscript></noscript>
         </header>
         
         <main>
-
             {{content}}
-
+            <noscript></noscript>
         </main>
 
         <footer>
+            <p class="flex-container">
+                <a target="_blank" href="https://twitter.com/nazaire_shabazz" class="icon icon-twitter icon-lg"></a>
+                <a target="_blank" href="https://nazaire-s.tumblr.com/" class="icon icon-tumblr icon-lg"></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UC3-P8zUZbtJxyTQTvDAb9Dg" class="icon icon-youtube-play icon-lg"></a>
+                <a target="_blank" href="https://www.instagram.com/nqshabazz/" class="icon icon-instagram icon-lg"></a>
+                <a target="_blank" href="https://vine.co/u/1149942086477430784" class="icon icon-vine icon-lg"></a>
+                <a target="_blank" href="https://github.com/HexWithN" class="icon icon-github icon-lg"></a>
+            </p>
 
-            <p>Copyright © 2016 Nazaire Shabazz</p>
-
+            <noscript></noscript>
         </footer>
 
         <script src="/Assets/Script.js"></script>
-
     </body>
-
 </html>

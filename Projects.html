@@ -3,61 +3,26 @@ layout: default
 title: Projects
 permalink: /Projects/
 type: website
+headertype: Projects
 tags: Games, Indie Games, Game Development, Portfolio
 desc: These projects are made with luv by Nazaire
 ---
 
-<section class="checkMe" id="Projects">
-    
-    <section class="content card">
+<section class="content" id="projects">
+    <h1>Projects</h1>
 
-        <h1>Projects</h1>
-
-        <hr />
-        
-
-        {% for post in site.categories.project %}
-
-            {% if forloop.index0 == 0 %}
-
-            <figure class="card featured-item">
-
-                <p>Latest Project:</p>
-                <img alt="{{post.title}}" src="/{{ post.image }}" />
-                <figcaption>
-
-                    <h2><a class="theLink" href="{{ post.url }}">{{ post.title }}</a></h2>
-
-                    <p class="entry">
-
-                        {{ post.desc }}
-
-                    </p>
-
-                </figcaption>
-
-            </figure>
-
-            {% else %}
-
+    <section>
+    {% for post in site.categories.project %}
+        <a class="linkbox" {% if post.haspage %}href="{{post.url}}"{% endif %}>
             <article>
-
-
-                <figure class="portrait-card">
-
-                    <img alt="{{post.title}}" src="/{{post.image}}" />
-                    <figcaption>
-                        <a class="theLink" href="{{post.url}}">{{post.title}}</a>
-                    </figcaption>
-
-                </figure>
-
-            </article>
-
+            {% if post.image %}
+                <img alt="{{post.title}}" src="/{{post.image}}"/>
             {% endif %}
-
-        {% endfor %}
-
+                <figcaption>
+                    <h2>{{post.title}}</h2>
+                </figcaption>
+            </article>
+        </a>
+    {% endfor %}
     </section>
-
 </section>
