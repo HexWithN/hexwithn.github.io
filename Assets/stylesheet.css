@@ -12,7 +12,7 @@ a{text-decoration: none;}
 dt{margin-top: 15px;}
 dd{margin: 0 0 0 50px;}
 
-header{padding: 15px 0; color: #444; background-color: #fff;}
+header{padding: 15px 0; margin-bottom: 75px; color: #444; background-color: #fff;}
 	header .home-button{padding-left: 10%; font-size: 3em;}
 		header .home-button .emphasize{color: #00aeff; font-weight: 900;}
 		header .home-button:hover .emphasize{color: #000;}
@@ -29,7 +29,7 @@ footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding: 15px 0; co
 	footer .flex-container a{padding: 0 10px; text-indent: 0;}
 		footer .flex-container a:hover{color: #00aeff;}
 
-.content h1{padding: 50px 10% 25px 10%; font-size: 2em; color: #444;}
+.content h1{padding: 0 10% 25px 10%; font-size: 2em; color: #444;}
 		
 .content section{width: 100vw; text-align: center;}
 .content .linkbox{display: inline-block; width: 20%; min-width: 300px; margin: 0 1% 1% 1%; opacity: 0.9;}
@@ -57,11 +57,11 @@ footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding: 15px 0; co
 	#error404 figure p a{color: #00aeff;}
 #error404 figure img{padding-top: 20px;}
 
-.post.content h1{padding: 50px 0 0 20%;}
-.post.content h2{padding: 15px 0 50px 20%;}
+.post.content h1{padding: 0 0 0 20%;}
+.post.content h2{padding: 0 0 50px 20%;}
 .post-content{width: 60%; margin: auto; font-size: 1.25em;}
 .post-content p{text-indent: 0;}
-.post #disqus_thread{width: 60%; padding-top: 50px; margin: auto;}
+.post #disqus_thread{width: 50%; padding-top: 50px; margin: auto;}
 
 /* OTHER STUFF */
 
