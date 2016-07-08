@@ -46,7 +46,8 @@
         {% endif %} 
 
         <link rel="shortcut icon" href="/Assets/favicon.png">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Jaldi&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Jaldi:700" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="/Assets/stylesheet.css"/>
 
 		<title>nazaire shabazz - {{page.title}}</title>
@@ -54,30 +55,13 @@
 
     <body class="no-js">
         <header>
+            <a class="home-button" href="/"><span class="emphasize">nazaire</span> shabazz</a>
+            <hr />
             <nav>
-                <a class="home-button" href="/"><span class="emphasize">nazaire</span>shabazz</a>
-                <span class="float-right">
-                    {% if page.headertype contains "Home" %}
-                        <a id="current-page" href="/">Home</a>
-                    {% else %}
-                        <a href="/">Home</a>
-                    {% endif %}
-                    {% if page.headertype contains "Projects" %}
-                        <a id="current-page" href="/Projects/">Projects</a>
-                    {% else %}
-                        <a href="/Projects/">Projects</a>
-                    {% endif %}
-                    {% if page.headertype contains "Blog" %}
-                        <a id="current-page" href="/Blog/">Blog</a>
-                    {% else %}
-                        <a href="/Blog/">Blog</a>
-                    {% endif %}
-                    {% if page.headertype contains "More" %}
-                        <a id="current-page" href="/More/">More</a>
-                    {% else %}
-                        <a href="/More/">More</a>
-                    {% endif %}
-                </span>
+                <div class="rotateMe"><a {% if page.headertype contains "Home" %}id="current-page"{% endif %} href="/">home</a></div>
+                <div class="rotateMe"><a {% if page.headertype contains "Projects" %}id="current-page"{% endif %} href="/Projects/">projects</a></div>
+                <div class="rotateMe"><a {% if page.headertype contains "Blog" %}id="current-page"{% endif %} href="/Blog/">blog</a></div>
+                <div class="rotateMe"><a {% if page.headertype contains "More" %}id="current-page"{% endif %} href="/More/">more</a></div>
             </nav>
             
             <noscript></noscript>

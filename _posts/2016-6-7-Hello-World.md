@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello World
+title: Hello World!
 type: article
 image: Assets/Blog Thumbnails/Hello World.gif
 category: blogpost
