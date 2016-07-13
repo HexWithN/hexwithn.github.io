@@ -10,9 +10,11 @@ a{text-decoration: none;}
 dt{margin-top: 15px;}
 dd{margin: 0 0 0 50px;}
 
+.bluText{color: #00ccff;}
+
 header{padding: 15px 0;}
 	header .home-button{position: relative; padding-left: 10%; font-size: 40px; color: #eee;}
-		header .home-button .emphasize{color: #00aeff; font-weight: 900;}
+		header .home-button .emphasize{color: #00ccff; font-weight: 900;}
 		header .home-button img{position: absolute; display: none; top: 0; left: 0;}
 			header .home-button:hover img{display: initial;}
 	header a:not(.home-button){padding: 15px; font-size: 25px;}
@@ -37,18 +39,18 @@ main{padding-bottom: 50px;}
 
 footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding: 15px 0; color: #fff; text-align: center; background-color: #222;}
 	footer .flex-container a{padding: 0 10px; text-indent: 0;}
-		footer .flex-container a:hover{color: #00aeff;}
+		footer .flex-container a:hover{color: #00ccff;}
 
 .content h1{padding: 0 10% 25px 10%; font-size: 2em;}
 		
 .content section{width: 80%; margin: auto; text-align: left;}
 .content .linkbox{display: inline-block; width: 20%; min-width: 300px; margin: 0 1% 1% 1%; opacity: 0.9;}
-	.content section .linkbox:hover{color: #00aeff; opacity: 1;}
+	.content section .linkbox:hover{color: #00ccff; opacity: 1;}
 	.content .linkbox article{position: relative;}
 		.content .linkbox article figcaption{font-size: 1.5em; text-align: left;}
 
 #homepage > p{min-width: 300px; width: 40%; margin: 0 0 0 10%; padding: 0 0 25px 0; font-size: 20px; font-weight: 100;}
-	#homepage > p a{color: #00aeff; font-weight: 550;}
+	#homepage > p a{color: #00ccff; font-weight: 550;}
 	#homepage > p a:hover{text-decoration: underline;}
 	#homepage .linkbox{width: 25%}
 	#homepage img{width: 300px; height: 300px;}
@@ -61,21 +63,31 @@ footer{position: absolute; left: 0; bottom: 0; width: 100vw; padding: 15px 0; co
 #more dt{font-weight: 900;}
 #more progress{display: block; width: 100%;}
 #more a.icon{width: 15%; text-align: center;}
-#more a.icon:hover{color: #00aeff;}
+#more a.icon:hover{color: #00ccff;}
 #more #twitter-thing{display: inline-block; padding: 0 15px}
 #more iframe[id^='twitter-widget-0'] {width: 50%; height: 60vh !important}
-#more .makeMeBlu{color: #00aeff;}
+#more .makeMeBlu{color: #00ccff;}
 
 #error404 figure{text-align: center;}
 #error404 figure figcaption{padding: 2.5% 0; font-size: 1.25em;}
-	#error404 figure p a{color: #00aeff;}
+	#error404 figure p a{color: #00ccff;}
 #error404 figure img{padding-top: 20px;}
 
+.post-content{width: 60%; margin: auto; font-size: 1.25em; text-align: center;}
+.post.content figure, .post.content h1, .post.content h2, .post.content h3, .post.content p, .post.content pre, .post.content li{text-align: left; padding-top: 25px;}
 .post.content h1{padding: 0 0 0 20%;}
-.post.content h2{padding: 0 0 50px 20%;}
-.post-content{width: 60%; margin: auto; font-size: 1.25em;}
+.post.content h2{padding: 0 0 25px 20%;}
+.post.content figure{display: inline-block;}
+.post.content figure.size200{width: 200px;}
+.post.content img{width: auto; height: auto; margin: auto;}
+.post.content figcaption{padding: 0 0 0 0;}
+.post.content a:hover{text-decoration: underline;}
+.post.content a{color: #00ccff;}
 .post-content p{text-indent: 0;}
-.post #disqus_thread{width: 50%; padding-top: 50px; margin: auto;}
+.post.content ul p{padding-top: 0;}
+.post.content ul pre{padding: 10px 0;}
+.post.content pre{margin-left: 10px; font-size: 1.1rem; font-family: mono;}
+.post #disqus_thread{width: 60%; padding: 50px 0 25px 0; margin: auto;}
 
 /* OTHER STUFF */
 
