@@ -19,7 +19,7 @@ header{padding: 15px 0;}
 			header .home-button:hover img{display: initial;}
 	header a:not(.home-button){padding: 15px; font-size: 25px;}
 	header hr, header nav{width: 80%; margin: auto;}
-	header hr{text-align: center; margin: 15px auto; border: none; border-top: 1px solid #00ccff; border-color: #00ccff; color: #00ccff;}
+	header hr{text-align: center; margin: 0px auto; border: none; border-top: 1px solid #00ccff; border-color: #00ccff; color: #00ccff;}
 	header hr:after{content: '⚫'; display: inline-block; position: relative; top: -0.7em; margin: 0 auto; padding: 0 15px; background: #222;}
 	header nav{text-align: right; padding: 0 0 25px 0;}
 	header .rotateMe{

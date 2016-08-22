@@ -40,10 +40,6 @@
         <link rel="canonical" href="/" />
         
         <script src="https://use.fonticons.com/29ee37cc.js"></script>
-        
-        {% if page.tags contains "Math" %}
-            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        {% endif %} 
 
         <link rel="shortcut icon" href="/Assets/favicon.png">
 		<link href='https://fonts.googleapis.com/css?family=Jaldi&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -58,10 +54,9 @@
             <a class="home-button" href="/"><span class="emphasize">nazaire</span> shabazz</a>
             <hr />
             <nav>
-                <div class="rotateMe"><a {% if page.headertype contains "Home" %}id="current-page"{% endif %} href="/">home</a></div>
-                <div class="rotateMe"><a {% if page.headertype contains "Projects" %}id="current-page"{% endif %} href="/Projects/">projects</a></div>
-                <div class="rotateMe"><a {% if page.headertype contains "Blog" %}id="current-page"{% endif %} href="/Blog/">blog</a></div>
-                <div class="rotateMe"><a {% if page.headertype contains "More" %}id="current-page"{% endif %} href="/More/">more</a></div>
+                <div><a {% if page.headertype contains "Home" %}id="current-page"{% endif %} href="/">projects</a></div>
+                <div><a {% if page.headertype contains "About" %}id="current-page"{% endif %} href="/About/">about me</a></div>
+                <div><a {% if page.headertype contains "More" %}id="current-page"{% endif %} href="/Contact/">contact</a></div>
             </nav>
             
             <noscript></noscript>
